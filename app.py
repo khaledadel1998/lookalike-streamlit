@@ -24,10 +24,10 @@ if not os.path.exists(file_path_2):
 
 # --- Load the pickle files ---
 with open(file_path_1, 'rb') as f:
-    vect = pickle.load(f)
+    df = pickle.load(f)
 
 with open(file_path_2, 'rb') as f:
-    total = pickle.load(f)
+    quick = pickle.load(f)
 
 # --- Use the loaded objects ---
 st.write("Pickle files loaded successfully!")

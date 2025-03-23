@@ -4,7 +4,7 @@ import plotly.express as px
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 
-# testing
+
 # Sample Data
 # df = pd.read_pickle("vect.pkl")
 # quick = pd.read_excel("processed.xlsx")

@@ -6,7 +6,8 @@ import numpy as np
 import gdown
 import pickle
 import os
-
+st.set_page_config(page_title="Company Similarity Lookup", layout="wide")
+st.title("Find Similar Companies")
 # --- File ID from Google Drive ---
 file_id_1 = '12spuDG-ENcujv9TizJZzGB3U_OS7anTQ'  # replace with your real file ID
 file_id_2 = '1bXgBmWCU8yZOA04spPs95_TYT_V-87xr'  # second file
@@ -140,11 +141,6 @@ pd.set_option("display.max_columns", None)  # Show all columns
 
 
 
-
-import streamlit as st
-import pandas as pd
-
-
 # Define default weights
 default_weights = {      
     'hq_country_sim': 0.0,        
@@ -155,8 +151,7 @@ default_weights = {
 }
 
 # Streamlit Page Settings
-st.set_page_config(page_title="Company Similarity Lookup", layout="wide")
-st.title("Find Similar Companies")
+
 
 # **Predefined Coresignal IDs for Quick Selection**
 col1, col2, col3 = st.columns(3)

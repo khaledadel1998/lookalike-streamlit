@@ -3,7 +3,34 @@ import pandas as pd
 import plotly.express as px
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
+import gdown
+import pickle
+import os
 
+# --- File ID from Google Drive ---
+file_id_1 = '12spuDG-ENcujv9TizJZzGB3U_OS7anTQ'  # replace with your real file ID
+file_id_2 = '1bXgBmWCU8yZOA04spPs95_TYT_V-87xr'  # second file
+
+# --- Output file paths ---
+file_path_1 = 'vectTotal2.pkl'
+file_path_2 = 'total140Kset.pkl'
+
+# --- Download files if not already downloaded ---
+if not os.path.exists(file_path_1):
+    gdown.download(f'https://drive.google.com/uc?id={file_id_1}', file_path_1, quiet=False)
+
+if not os.path.exists(file_path_2):
+    gdown.download(f'https://drive.google.com/uc?id={file_id_2}', file_path_2, quiet=False)
+
+# --- Load the pickle files ---
+with open(file_path_1, 'rb') as f:
+    vect = pickle.load(f)
+
+with open(file_path_2, 'rb') as f:
+    total = pickle.load(f)
+
+# --- Use the loaded objects ---
+st.write("Pickle files loaded successfully!")
 
 # Sample Data
 # df = pd.read_pickle("vect.pkl")
